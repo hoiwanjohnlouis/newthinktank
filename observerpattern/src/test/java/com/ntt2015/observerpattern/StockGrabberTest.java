@@ -1,13 +1,39 @@
 package com.ntt2015.observerpattern;
 
-import junit.framework.TestCase;
+import org.junit.jupiter.api.*;
 
-public class StockGrabberTest extends TestCase {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-    public void setUp() throws Exception {
-        super.setUp();
+public class StockGrabberTest {
+    @BeforeAll
+    static void beforeAll() {
+    }
+    @AfterAll
+    static void afterAll() {
+    }
+    @BeforeEach
+    void setUp() {
+    }
+    @AfterEach
+    void tearDown() {
     }
 
-    public void tearDown() throws Exception {
+    /*
+     *  testing data
+     */
+    StockGrabber testData;
+
+    @Test
+    void Test001() {
+        // process array of tags
+        assertEquals(0,0);
+        assertNotEquals(0,1);
+    }
+
+    /**
+     * @param args   no args used at this time
+     */
+    public static void main(String[] args) {
     }
 }

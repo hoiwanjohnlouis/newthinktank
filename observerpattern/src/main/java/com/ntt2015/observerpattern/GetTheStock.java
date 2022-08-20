@@ -24,12 +24,12 @@ public class GetTheStock implements Runnable{
     // in Thread.sleep() below
 
     // private int startTime;
-    private String stock;
+    private final String stock;
     private double price;
 
     // Will hold reference to the StockGrabber object
 
-    private ISubject stockGrabber;
+    private final ISubject stockGrabber;
 
     public GetTheStock(ISubject stockGrabber, int newStartTime, String newStock, double newPrice){
 
@@ -61,8 +61,9 @@ public class GetTheStock implements Runnable{
                 // Use Thread.sleep(startTime * 1000); to
                 // make sleep time variable
             }
-            catch(InterruptedException e)
-            {}
+            catch(InterruptedException e) {
+                e.printStackTrace();
+            }
 
             // Generates a random number between -.03 and .03
 
@@ -76,9 +77,9 @@ public class GetTheStock implements Runnable{
 
             price = Double.valueOf(df.format((price + randNum)));
 
-            if(stock == "IBM") ((StockGrabber) stockGrabber).setIBMPrice(price);
-            if(stock == "AAPL") ((StockGrabber) stockGrabber).setAAPLPrice(price);
-            if(stock == "GOOG") ((StockGrabber) stockGrabber).setGOOGPrice(price);
+            if(stock.equals( "IBM" )) ((StockGrabber) stockGrabber).setIBMPrice(price);
+            if(stock.equals( "AAPL" )) ((StockGrabber) stockGrabber).setAAPLPrice(price);
+            if(stock.equals( "GOOG" )) ((StockGrabber) stockGrabber).setGOOGPrice(price);
 
             System.out.println(stock + ": " + df.format((price + randNum)) +
                     " " + df.format(randNum));

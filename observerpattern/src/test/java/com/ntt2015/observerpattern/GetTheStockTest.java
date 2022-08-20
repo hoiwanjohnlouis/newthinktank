@@ -1,11 +1,11 @@
-package com.ntt2015.abstractfactorypattern;
+package com.ntt2015.observerpattern;
 
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-public class UFOEnemyShipTest {
+class GetTheStockTest {
     @BeforeAll
     static void beforeAll() {
     }
@@ -22,7 +22,7 @@ public class UFOEnemyShipTest {
     /*
      *  testing data
      */
-    UFOEnemyShip testData;
+    GetTheStock testData;
 
     @Test
     void Test001() {
